@@ -3,15 +3,13 @@ kind: Application
 metadata:
   name: myapp-argo-application
   namespace: argocd
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
 
   source:
-    repoURL: https://github.com/seemaboora/Argocd.git
+    repoURL: https://gitlab.com/nanuchi/argocd-app-config.git
     targetRevision: HEAD
-    path: test
+    path: dev
   destination: 
     server: https://kubernetes.default.svc
     namespace: myapp
